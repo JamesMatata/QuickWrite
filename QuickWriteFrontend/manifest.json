@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "QuickWrite",
+  "version": "1.0.0",
+  "description": "Your all-in-one writing assistance for streamlined and effective communication",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "files/QuickWriteS.png",
+    "42": "files/QuickwriteS.png",
+    "128": "files/QuickwriteS.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["libs/microsoft-speech-sdk.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

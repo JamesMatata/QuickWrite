@@ -1,0 +1,63 @@
+{% autoescape off %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Your Account - QuickWrite</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; width: 100%;">
+    <!-- Main Container -->
+    <table width="100%" cellspacing="0" cellpadding="0" style="background-color: transparent; padding: 40px 0;">
+        <tr>
+            <td align="center">
+                <!-- Email Wrapper -->
+                <table width="100%" style="max-width: 600px; background-color: transparent; border-radius: 10px; overflow: hidden; margin: 0 auto;">
+                    <!-- Header with Logo -->
+                    <tr>
+                        <td style="background-color: #22639b; padding: 20px; background-image: linear-gradient(to right, #2bc8dd, #22639b); text-align: center;">
+                            <img src="https://drive.google.com/uc?export=view&id=1d_H6JhYN1dqvNIisre5YGJ2_4wRMMm9N" alt="QuickWrite logo" style="height: 50px; max-width: 100%; display: block; margin: 0 auto;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-top: 10px; background: none;"></td>
+                    </tr>
+
+                    <!-- Email Content -->
+                    <tr>
+                        <td style="padding: 20px; text-align: center; background-color: #ffffff; border-top: 4px solid; border-image: linear-gradient(to right, #2bc8dd, #22639b); border-image-slice: 1; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                            <h2 style="font-size: 20px; font-weight: bold; color: #333333; margin-top: 0;">Confirm Your Email</h2>
+                            <hr>
+                            <p style="color: #333333; font-size: 15px;">Hello <b>{{ user.first_name }}</b>,</p>
+                            <p style="color: #333333; font-size: 15px;">Thank you for registering with QuickWrite! We are thrilled to have you on board. Please confirm your email address by clicking the button below:</p>
+
+                            <!-- Button -->
+                            <p>
+                                <a href="http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}" style="display: inline-block; padding: 14px 28px; background-color: #22639b; background-image: linear-gradient(to right, #1c93a3, #337ab8); color: #ffffff; text-decoration: none; font-size: 16px; border-radius: 5px; margin: 20px 0;">
+                                    Confirm Account
+                                </a>
+                            </p>
+
+                            <!-- Alternative Link -->
+                            <p style="color: #333333; font-size: 15px;">Alternatively, copy and paste the following link into your browser:</p>
+                            <p>
+                                <a href="http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}" style="color: #1c93a3; text-decoration: underline; word-wrap: break-word;">http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}</a>
+                            </p>
+
+                            <p style="color: #333333; font-size: 15px;">Thank you for choosing QuickWrite! We’re excited to help you enhance your writing experience.</p>
+                            <p style="color: #333333; font-size: 15px;">Best Regards, The QuickWrite Team</p>
+                            
+                            <hr style="border: 0; height: 1px; background-color: #dddddd; margin: 20px 0;">
+                            <p style="font-size: 12px; color: #9ca1a1;">If you did not create this account, please disregard this email.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+{% endautoescape %}

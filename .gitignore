@@ -1,0 +1,13 @@
+QuickWrite/.venv/
+QuickWrite/.env
+QuickWrite/db.sqlite3
+
+db.sqlite3
+
+# Ignore Django migrations
+migrations/
+*/migrations/*
+
+# Ignore IDEs and editors
+.vscode/
+.idea/
