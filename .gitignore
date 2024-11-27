@@ -1,5 +1,5 @@
-QuickWrite/.venv/
-QuickWrite/.env
+.venv/
+.env
 QuickWrite/db.sqlite3
 
 db.sqlite3
